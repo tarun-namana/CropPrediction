@@ -1,0 +1,90 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+        .style9 {color: #FFFF00}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div>
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">View Agricultural Crop Details  !!! </p>
+                            <hr>
+                            <div >
+                                <table border="5" bordercolor="#FF00FF">
+
+                     <tr><td bgcolor="#FF0000"><div align="center"><span class="style9 style8"><strong> State_Name</strong></span></div></td>
+                         <td bgcolor="#FF0000"><div align="center"><span class="style9 style8"><strong> District_Name</strong></span></div></td>
+                    <td bgcolor="#FF0000"><div align="center"><span class="style9 style8"><strong>Crop_Year</strong></span></div></td>
+                    <td bgcolor="#FF0000"><div align="center"><span class="style9 style8"><strong>Season</strong></span></div></td>
+                    <td bgcolor="#FF0000"><div align="center"><span class="style9 style8"><strong>Crop</strong></span></div></td>
+                    <td bgcolor="#FF0000"><div align="center"><span class="style9 style8"><strong>Area</strong></span></div></td>
+                    <td bgcolor="#FF0000"><div align="center"><span class="style9 style8"><strong>Production</strong></span></div></td>
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+                          <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.State_Name}}</div></td>
+                          <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.District_Name}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Crop_Year}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Season}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Crop}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Area}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Production}}</div></td>
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
